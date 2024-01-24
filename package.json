@@ -1,0 +1,14 @@
+{
+  "name": "vistar-assessment",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nate Dukatz",
+  "license": "MIT",
+  "sideEffects": false,
+  "devDependencies": {
+    "@testing-library/cypress": "^10.0.1",
+    "cy-verify-downloads": "^0.2.3",
+    "cypress": "^13.6.3",
+    "typescript": "^5.3.3"
+  }
+}
