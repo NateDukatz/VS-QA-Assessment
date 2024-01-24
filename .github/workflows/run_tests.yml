@@ -1,9 +1,8 @@
 name: run-tests
 
 on:
-  pull_request:
-    types: ["opened", "synchronize"]
-    branches-ignore:
+  push:
+    branches:
       - main
 
 env:
