@@ -33,14 +33,10 @@ jobs:
             node_modules
             ~/.cache/Cypress
           key: ${{ runner.os }}-tests-${{ hashFiles('tests/yarn.lock') }}
-      - name: Install dependencies
-        run: yarn install
       - name: Run tests
         id: run-tests
         uses: cypress-io/github-action@v6
         with:
           config: baseUrl=https://www.vistarmedia.com
-          working-directory: "./"
-          group: "E2E tests"
-          install: true
+          build: yarn install
           browser: chrome
