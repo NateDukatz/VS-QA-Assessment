@@ -6,10 +6,10 @@ describe('media owner search', () => {
   })
 
   it('tests for proper handling of sql injection attempts', () => {
-   cy.get('#site-header__search-trigger').click()
-   cy.get('#site-header__search-form').type('\\ OR 1=1;--')
-  cy.get('#site-header__search-submit').click()
-  // this is a negative test to make sure the search request is blocked
+    cy.get('#site-header__search-trigger').click()
+    // this search should be blocked as a potential sql injection attempt
+    cy.get('input[id="site-header__search-input"]').type('\\ OR 1=1;--{enter}')
+  // making sure the search request is blocked
   cy.wait('@search')
     .its('response.statusCode')
     .should('eq', 403)
